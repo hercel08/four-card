@@ -1,0 +1,128 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* colors */
+    --border-red: hsl(0, 78%, 62%);
+    --border-cyan: hsl(180, 62%, 55%);
+    --border-orange: hsl(34, 97%, 64%);
+    --border-blue: hsl(212, 86%, 64%);
+
+    --components-dark-blue: hsl(234, 12%, 34%);
+    --components-grayish-blue: hsl(229, 6%, 66%);
+    --components-light-gray: hsl(0, 0%, 98%);
+
+    /* font */
+    --font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+h3 {
+    color: var(--components-dark-blue);
+    font-size: 1.6rem;
+    font-weight: 200;
+    margin-top: 2rem;
+}
+h1 {
+    color: var(--components-dark-blue);
+    font-size: 1.6rem;
+    margin: .625rem 0;
+}
+header p {
+    color: var(--components-grayish-blue);
+}
+section {
+    display: grid;
+    gap: 1.825rem;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.content {
+    width: 300px;
+    height: 230px;
+    box-shadow: 0px 5px 5px 1px var(--components-grayish-blue);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 30px;
+}
+.content h2 {
+    color: var(--components-dark-blue);
+    font-size: 1.325rem;
+    margin-bottom: 10px;
+}
+.content p {
+    color: var(--components-grayish-blue);
+    font-size: .825rem;
+}
+.content img {
+    position: relative;
+    top: 18%;
+    left: 70%;
+    width: 60px;
+    height: 60px;
+}
+.content.supervisor {
+    border-top: 5px solid var(--border-cyan);
+}
+.content.team-builder {
+    border-top: 5px solid var(--border-red);
+}
+.content.karma {
+    border-top: 5px solid var(--border-orange);
+}
+.content.calculator {
+    border-top: 5px solid var(--border-blue);
+}
+
+
+
+
+
+@media (min-width: 500px) {
+    header {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        max-width: 550px;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    section {
+        display: grid;
+        gap: 1rem 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 115px)
+    }
+    .content.supervisor {
+        grid-row-start: 2;
+    }
+    .content.team-builder {
+        grid-column-start: 2;
+    }
+
+    .content.calculator {
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+    .content.karma {
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+}
